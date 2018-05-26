@@ -1,0 +1,20 @@
+.navbar {
+	margin-top:20px;
+}
+
+header h1 {
+	font-family: sans-serif;
+	font-size: 38px;
+}
+
+p, address, section {
+	font-family: sans-serif;
+}
+
+address {
+	margin-top:20px;
+}
+
+html { 
+	margin-left: calc(100vw - 100%);
+}
