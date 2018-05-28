@@ -1,5 +1,6 @@
 <?php 
     include '../static/header.php';
+    require_once '../auth.php';
 
     if(isset($_GET['id'])) {
         $id=$_GET['id'];
