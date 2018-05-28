@@ -1,4 +1,4 @@
-<?php include '/static/header.php';?>
+<?php require 'static/header.php';?>
 
 <h1> Üdvözöllek a blog oldalamon! </h1>    
 
@@ -22,4 +22,4 @@
 
 ?>
 
-<?php include '/static/footer.php';?>
+<?php require 'static/footer.php';?>

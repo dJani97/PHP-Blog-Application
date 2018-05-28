@@ -20,10 +20,10 @@
     <li><a href="<?= ROOT ?>">Home</a></li>
     <?php
         if(isset($_GET['post'])){
-            echo '<li><a href="' . ROOT . '/posts">Bejegyzsek</a></li>'
+            echo '<li><a href="' . ROOT . '/posts">Bejegyzések</a></li>'
                 . '<li class="active">' . $lista->fetch_row()[2] . '</li>';
         } else {
-            echo '<li class="active">Bejegyzsek</li>';
+            echo '<li class="active">Bejegyzések</li>';
         }
     ?>
 </ol>

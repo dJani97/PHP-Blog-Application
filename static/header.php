@@ -47,7 +47,7 @@
 							<li><a href="<?= ROOT ?>/posts/new.php">Új bejegyzés</a></li>
 						</ul>
 					</li>
-					
+					<!--
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle"
 							data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -56,7 +56,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="/authors/list">Összes</a></li>
 						</ul>
-					</li>
+					</li> -->
 				</ul>
 			</div>
 		</div>

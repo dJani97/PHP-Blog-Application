@@ -40,7 +40,7 @@
 
 <ol class="breadcrumb">
     <li><a href="<?= ROOT ?>">Home</a></li>
-    <li><a href="<?= ROOT ?>/posts">Bejegyzsek</a></li>
+    <li><a href="<?= ROOT ?>/posts">Bejegyzések</a></li>
     <li class="active">Új bejegyzés</li>
 </ol>
 
@@ -52,7 +52,7 @@
 <!-- SIKERES ALERT -->
 <div class="alert alert-success alert-dismissible fade in <?php if($showForm){echo 'hidden';} ?>" id="success_alert">
     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    <strong>Sikeres mentés!</strong>
+    <strong>Sikeres mentés!</strong> Hamarosan átirányítalak a főoldalra, hogy láthasd az új postot :)
 </div>
 <!-- FADE ALERT -->
 <script src="../static/js/fade_alert.js"></script>
