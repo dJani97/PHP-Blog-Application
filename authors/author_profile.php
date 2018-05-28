@@ -48,5 +48,6 @@
 <?php
 } else {
     echo "<h1>Nincs ilyen szerző :(</h1>";
+    header('Location: ' . ROOT . '/authors/');
 }
 ?>

@@ -32,8 +32,17 @@
 <?php
     $list->data_seek(0);
 
-    while($line=mysqli_fetch_array($list)) {
-        include __DIR__.'/post.php';
+    if (mysqli_num_rows($list) != 0) { 
+        while($line=mysqli_fetch_array($list)) {
+            include __DIR__.'/post.php';
+        }
+    }
+    else {
+        if (isset($_GET['post'])) {
+            echo "<h1>Nincs ilyen post :(</h1>";
+            header('Location: ' . ROOT . '/posts/');
+        }
+        echo "<h1 class='text-center'>Még nincsenek postok :(</h1>";
     }
 ?>
 
