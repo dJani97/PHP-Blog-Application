@@ -8,18 +8,19 @@
     $author_details=$list->fetch_row();
     $author_name=$author_details[0];
     $post_count=$author_details[1];
-    
-    $dbc=mysqli_connect(HOST, USER, PASSWD, DB) or die('Nincs adatbázis kapcsolat!');
-    mysqli_query($dbc, "set names 'utf8'") or die('Nem sikerült UTF-8 módba váltani!');
 
-    $teaser=true;
-    $query="SELECT * 
-            FROM post 
-            WHERE author = '". $_GET['author'] . "'
-            ORDER BY posted_on DESC";
+    if($author_name != "") {
+        $dbc=mysqli_connect(HOST, USER, PASSWD, DB) or die('Nincs adatbázis kapcsolat!');
+        mysqli_query($dbc, "set names 'utf8'") or die('Nem sikerült UTF-8 módba váltani!');
     
-    $list=mysqli_query($dbc, $query) or die('Sikertelen lekérdezés: <br>' . mysqli_error($dbc));
-    mysqli_close($dbc);
+        $teaser=true;
+        $query="SELECT * 
+                FROM post 
+                WHERE author = '". $_GET['author'] . "'
+                ORDER BY posted_on DESC";
+        
+        $list=mysqli_query($dbc, $query) or die('Sikertelen lekérdezés: <br>' . mysqli_error($dbc));
+        mysqli_close($dbc);
 ?>
 
 <article>
@@ -43,3 +44,9 @@
     </section>
     <hr/>
 </article>
+
+<?php
+} else {
+    echo "<h1>Nincs ilyen szerző :(</h1>";
+}
+?>

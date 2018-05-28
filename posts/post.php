@@ -2,15 +2,17 @@
     PHP paraméterek:
     $teaser = true, ha a teljes post helyett csak a teaser-t akarjuk megjeleníteni
     $teaser = true, ha "Friss!" postról van szó
+    isset ( $hide_delete )  elrejti a törlés gombot
     $line -> a post tartalma
 -->
 
 <blockquote class="blockquote">
-    <header>   
+    <header>
+        <?php if (!isset($hide_delete)) { ?>
         <a href="<?= ROOT . '/posts/delete.php?id=' . $line['id'] ?>"
            class="btn btn-danger btn pull-right" role="button">
           <i class="glyphicon glyphicon-trash"></i> Törlés
-        </a>         
+        </a> <?php } ?>
         <h2> <?= $line['title'] ?>
             <?php if (isset($fresh) && $fresh) {
                 echo '<span class="label label-default">Friss!</span>';

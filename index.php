@@ -14,6 +14,7 @@
 
     $fresh=true;
     $teaser=true;
+    $hide_delete=true;
 
     while($line=mysqli_fetch_array($list)) {
         include __DIR__.'/posts/post.php';
