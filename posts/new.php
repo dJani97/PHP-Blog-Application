@@ -39,7 +39,7 @@
 ?>
 
 <ol class="breadcrumb">
-    <li><a href="<?= ROOT ?>">Home</a></li>
+    <li><a href="<?= ROOT ?>">Kezdőlap</a></li>
     <li><a href="<?= ROOT ?>/posts">Bejegyzések</a></li>
     <li class="active">Új bejegyzés</li>
 </ol>

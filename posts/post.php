@@ -31,7 +31,8 @@
 
     <footer class="blockquote-footer">
         Szerző: 
-        <a>
+        <a 
+            href="<?= ROOT . '/authors?author=' . $line['author'] ?>">
             <?= $line['author'] ?> 
         </a>
     </footer>

@@ -12,12 +12,13 @@
         $teaser=true;
     } 
     $list=mysqli_query($dbc, $query) or die('Sikertelen lekérdezés: <br>' . mysqli_error($dbc));
+    mysqli_close($dbc);
 ?>
 
 
 
 <ol class="breadcrumb">
-    <li><a href="<?= ROOT ?>">Home</a></li>
+    <li><a href="<?= ROOT ?>">Kezdőlap</a></li>
     <?php
         if(isset($_GET['post'])){
             echo '<li><a href="' . ROOT . '/posts">Bejegyzések</a></li>'
@@ -34,7 +35,6 @@
     while($line=mysqli_fetch_array($list)) {
         include __DIR__.'/post.php';
     }
-    mysqli_close($dbc);
 ?>
 
 

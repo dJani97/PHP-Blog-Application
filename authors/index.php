@@ -6,7 +6,10 @@
     mysqli_query($dbc, "set names 'utf8'") or die('Nem sikerült UTF-8 módba váltani!');
 
     if(isset($_GET['author'])){
-        $query="SELECT author FROM post WHERE author = " . $_GET['author'];
+        $query="SELECT author, count(author) as posts
+                FROM post
+                WHERE author = '". $_GET['author'] . "'
+                GROUP BY author";
         
     } else {
         $query="SELECT author, count(author) as posts
@@ -18,36 +21,29 @@
     $list=mysqli_query($dbc, $query) or die('Sikertelen lekérdezés: <br>' . mysqli_error($dbc));
     mysqli_close($dbc);
     ?>
-        <table id="author_table" class="table table-striped table-hover table-bordered">
-        <thead>
-            <tr>
-                <th>Név</th>
-                <th>Bejegyzések száma</th>
-            </tr>
-        </thead>
-        <tbody>
+
+    <ol class="breadcrumb">
+        <li><a href="<?= ROOT ?>">Kezdőlap</a></li>
         <?php
-            while($line=mysqli_fetch_array($list)) { ?>
-                <tr>
-                    <td><?= $line['author'] ?></td>
-                    <td><?= $line['posts'] ?></td>
-                </tr>
-            <?php }
+            if(isset($_GET['author'])){
+                echo '<li><a href="' . ROOT . '/authors">Szerzők</a></li>'
+                    . '<li class="active">' . $list->fetch_row()[0] . '</li>';
+            } else {
+                echo '<li class="active">Szerzők</li>';
+            }
+            // reset list:
+            $list->data_seek(0);
         ?>
-        </tbody>
-    </table>
+    </ol>
 
+    <?php
+    if(!isset($_GET['author']))
+    {
+        include 'author_table.php';
+    }
+    else // IF AUTHOR IS SET:
+    {
+        include 'author_profile.php';
+    }
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/dataTables.bootstrap.min.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            $('#author_table').DataTable( {
-                "order": [[ 1, "desc" ]]
-            });
-        });
-    </script>
-
-
-<?php include '../static/footer.php';?>
+include '../static/footer.php';?>
