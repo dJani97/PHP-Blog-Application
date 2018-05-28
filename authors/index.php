@@ -10,8 +10,8 @@
         
     } else {
         $query="SELECT author, count(author) as posts
-                FROM post 
-                GROUP BY author 
+                FROM post
+                GROUP BY author
                 ORDER BY count(author) DESC";
         
     }
@@ -25,34 +25,29 @@
                 <th>Bejegyzések száma</th>
             </tr>
         </thead>
-            <tbody>
-    <?php
-
-    while($line=mysqli_fetch_array($list)) {
-        ?>
+        <tbody>
+        <?php
+            while($line=mysqli_fetch_array($list)) { ?>
                 <tr>
                     <td><?= $line['author'] ?></td>
                     <td><?= $line['posts'] ?></td>
                 </tr>
-        <?php
-    }
-?>
-    </tbody>
-</table>
+            <?php }
+        ?>
+        </tbody>
+    </table>
 
 
-<!--
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/dataTables.bootstrap.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/jquery.dataTables.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/dataTables.bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#author_table').DataTable( {
+                "order": [[ 1, "desc" ]]
+            });
+        });
+    </script>
 
-<script>
-$(document).ready(function() {
-  $('#example').DataTable();
-});
-</script>
-
--->
 
 <?php include '../static/footer.php';?>
