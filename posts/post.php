@@ -6,12 +6,18 @@
 -->
 
 <blockquote class="blockquote">
-    <header>            
+    <header>   
+        <a href="<?= ROOT . '/posts/delete.php?id=' . $line['id'] ?>"
+           class="btn btn-danger btn pull-right" role="button">
+          <i class="glyphicon glyphicon-trash"></i> Törlés
+        </a>         
         <h2> <?= $line['title'] ?>
             <?php if (isset($fresh) && $fresh) {
                 echo '<span class="label label-default">Friss!</span>';
             }?>
         </h2>
+        
+
         <p> <small> <?= $line['posted_on'] ?> </small> </p>
     </header>
     <section>

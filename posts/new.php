@@ -20,7 +20,6 @@
         $teaser=$_POST['teaser'];
         $body=$_POST['body'];
         $author=$_POST['author'];
-        /*árvíztűrő tükörfúrógép*/
 
         if(check($title) && check($teaser) 
                 && check($body) && check($author)) {
