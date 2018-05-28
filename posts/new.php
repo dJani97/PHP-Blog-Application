@@ -62,7 +62,6 @@
     if($showForm) {
         include 'form.php';
     }
-    /* menő lenne ha 2 sec múlva redirectelne */
 
     include '../static/footer.php';
 ?>

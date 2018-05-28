@@ -1,4 +1,5 @@
-<form id="fromNewPost" class="form-horizontal" method="post">
+<form id="fromNewPost" class="form-horizontal" method="post"
+    action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
     <!-- TITLE -->
     <div class="form-group">
