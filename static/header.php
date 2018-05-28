@@ -3,6 +3,7 @@
 	xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
+	<title>PHP Blog App</title>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta charset="utf-8" />
@@ -16,7 +17,7 @@
 	<!-- Query -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-	<?php require_once __DIR__ .'/allandok.php';?>
+	<?php require_once __DIR__ .'/globals.php';?>
 
 	<?= '<style>' ?>
 		<?php include  __DIR__ . '/style.css' ?>
@@ -47,16 +48,16 @@
 							<li><a href="<?= ROOT ?>/posts/new.php">Új bejegyzés</a></li>
 						</ul>
 					</li>
-					<!--
+
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle"
 							data-toggle="dropdown" role="button" aria-haspopup="true"
 							aria-expanded="false">Szerzők <span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
-							<li><a href="/authors/list">Összes</a></li>
+							<li><a href="<?= ROOT ?>/authors/">Összes</a></li>
 						</ul>
-					</li> -->
+					</li>
 				</ul>
 			</div>
 		</div>

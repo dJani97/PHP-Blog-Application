@@ -30,7 +30,7 @@
                 . "VALUES('$author', '$title', '$teaser', '$body', NOW())";
             
             mysqli_query($dbc, "set names 'utf8'") or die('Nem sikerült UTF-8 módba váltani!');
-            mysqli_query($dbc, $query) or die('Sikertelen lekérdezés!');
+            mysqli_query($dbc, $query) or die('Sikertelen insert: <br>' . mysqli_error($dbc));
             mysqli_close($dbc);
 
             $showForm = false;

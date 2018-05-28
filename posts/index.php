@@ -11,7 +11,7 @@
         $query="SELECT * FROM post ORDER BY posted_on DESC";
         $teaser=true;
     } 
-    $lista=mysqli_query($dbc, $query) or die('Sikertelen lekérdezés!\n' . mysqli_error($dbc));
+    $lista=mysqli_query($dbc, $query) or die('Sikertelen lekérdezés: <br>' . mysqli_error($dbc));
 ?>
 
 

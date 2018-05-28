@@ -10,7 +10,7 @@
     mysqli_query($dbc, "set names 'utf8'") or die('Nem sikerült UTF-8 módba váltani!');
     
     $query="SELECT * FROM post ORDER BY posted_on DESC LIMIT 1";    
-    $lista=mysqli_query($dbc, $query) or die('Sikertelen lekérdezés!\n' . mysqli_error($dbc));
+    $lista=mysqli_query($dbc, $query) or die('Sikertelen lekérdezés: <br>' . mysqli_error($dbc));
 
     $fresh=true;
     $teaser=true;
