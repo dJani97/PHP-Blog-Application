@@ -5,10 +5,10 @@
     mysqli_query($dbc, "set names 'utf8'") or die('Nem sikerült UTF-8 módba váltani!');
 
     if(isset($_GET['author'])){
-        $query="SELECT * FROM post WHERE id = " . $_GET['post'];
+        $query="SELECT author FROM post WHERE author = " . $_GET['author'];
         
     } else {
-        $query="SELECT * FROM post ORDER BY posted_on DESC";
+        $query="SELECT author FROM post ORDER BY posted_on DESC";
         $teaser=true;
     } 
     $lista=mysqli_query($dbc, $query) or die('Sikertelen lekérdezés: <br>' . mysqli_error($dbc));

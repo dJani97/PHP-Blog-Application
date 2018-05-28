@@ -29,11 +29,17 @@
 <div class="container">
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
+
 			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#my-collapse-navbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
 				<a class="navbar-brand" href="<?= ROOT ?>">dJani97 blogja</a>
 			</div>
-			<div class="collapse navbar-collapse"
-				id="bs-example-navbar-collapse-1">
+
+			<div class="collapse navbar-collapse" id="my-collapse-navbar">
 				<ul class="nav navbar-nav">
 					<li>
 						<a href="<?= ROOT ?>">Kezdőlap</a>
