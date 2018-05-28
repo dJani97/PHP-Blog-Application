@@ -2,7 +2,7 @@ window.setTimeout(function () {
     // redirect:
     if ($("#success_alert").hasClass("hidden") === false) {
         window.setTimeout(function() {
-            window.location.href = '/';
+            window.location.href = '/blogApp/';
         }, 500);
     }
 
