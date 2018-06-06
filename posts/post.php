@@ -3,6 +3,7 @@
     $teaser = true, ha a teljes post helyett csak a teaser-t akarjuk megjeleníteni
     $teaser = true, ha "Friss!" postról van szó
     isset ( $hide_delete )  elrejti a törlés gombot
+    isset ( $fresh )  megjeleníti a "Friss!" label-t
     $line -> a post tartalma
 -->
 
