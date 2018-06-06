@@ -11,10 +11,6 @@ p, address, section {
 	font-family: sans-serif;
 }
 
-address {
-	margin-top:20px;
-}
-
 html { 
 	margin-left: calc(100vw - 100%);
 }
